@@ -2,7 +2,7 @@ import os
 
 from openai import OpenAI
 
-from tcg import generate_code, validate_generated_code
+from tcg.code_generation import generate_code, validate_generated_code
 from tcg.utils import get_all_files, extract_code, load_code_from_files
 
 
