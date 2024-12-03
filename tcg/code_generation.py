@@ -1,4 +1,4 @@
-from llm import chat_completion
+from .llm import chat_completion
 
 
 def generate_code(client, code, description="", model="gpt-4o"):
