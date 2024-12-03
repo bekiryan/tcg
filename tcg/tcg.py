@@ -17,6 +17,7 @@ class TestCaseGenerator:
 
         response = generate_code(self.client, code_files, function_description, self.model)
         test_code = extract_code(response)
+        print("Generated test code:", test_code)
 
         validate = validate_generated_code(self.client, test_code, self.model)
         print("Validation:", validate)
