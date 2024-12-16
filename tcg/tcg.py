@@ -23,6 +23,11 @@ class TestCaseGenerator:
         if self.validate:
             validate = validate_generated_code(self.client, test_code, self.model)
             print("Validation:", validate)
+            if "Validation Summary: Failed" in validate:
+                print("Validation failed. Regenerating code.")
+                response = generate_code(self.client, test_code + validate, function_description, self.model)
+                test_code = extract_code(response)
+
 
         # Ensure the directory exists
         os.makedirs(os.path.dirname(output_file_path), exist_ok=True)

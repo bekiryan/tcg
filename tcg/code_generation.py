@@ -79,7 +79,7 @@ def validate_generated_code(client, generated_code, language, model="gpt-4o"):
        - Suggestions for improving the code if any issues are detected.
 
     #### Example Validation Output:
-    Validation Summary: Passed
+    1. Validation Summary: Passed
 
     Details:
         - Test names follow `{language}` conventions.
@@ -87,6 +87,17 @@ def validate_generated_code(client, generated_code, language, model="gpt-4o"):
         - Correct use of `{language}` testing libraries.
         - Code is well-structured and formatted.
 
+    2. Validation Summary: Failed
+    
+    Details:
+        - Missing test cases for edge cases.
+        - Incorrect use of assertions in test functions.
+        - Test names do not follow `{language}` conventions.
+        
+    Suggestions:
+        - Add test cases for edge cases to improve coverage.
+        - Use appropriate assertions to verify expected behavior.
+        - Update test function names to adhere to `{language}` conventions.
     #### Input Code for Validation:
     ```{language}
     {generated_code}

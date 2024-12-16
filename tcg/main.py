@@ -4,7 +4,6 @@ from tcg.code_generation import generate_code, validate_generated_code
 from tcg.utils import get_all_files, load_code_from_files, extract_code
 
 
-
 def main():
     # Argument parser setup
     parser = argparse.ArgumentParser(description="Generate test code based on given parameters.")
@@ -32,6 +31,7 @@ def main():
         file.write(test_code)
 
     print(f"Generated test code saved to {args.output_file_path}")
+
 
 if __name__ == "__main__":
     main()
