@@ -4,7 +4,7 @@ from .llm import chat_completion
 def generate_code(client, code, language="Python", description="", model="gpt-4o"):
     prompt = f"""
     You are a unit test generator specializing in creating high-quality unit tests for {language} programming language.
-    Your task is to generate all possible unit tests functions or methods for a given code snippet.
+    Your task is to generate unit tests functions or methods for a given code snippet based on description (all possible if not provided).
 
     #### **Expected Output:**
     - A unit test file containing tests functions or methods for the provided code snippet.
