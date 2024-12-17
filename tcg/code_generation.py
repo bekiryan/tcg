@@ -43,7 +43,7 @@ def generate_code(client, code, language="Python", description="", model="gpt-4o
     return chat_completion(client, prompt, model)
 
 
-def validate_generated_code(client, generated_code, language, model="gpt-4o"):
+def validate_generated_code(client, generated_code, language="Python", model="gpt-4o"):
     prompt = f"""
     You are a code validator specializing in checking the correctness of unit tests for {language} programming language.
     Your task is to validate the provided unit test code against the following requirements:
