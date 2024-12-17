@@ -18,6 +18,8 @@ def generate_code(client, code, language="Python", description="", model="gpt-4o
     #### **Test Code Structure Requirements:**
     1. **Test Function or Method Names**:
         - Follow the naming conventions of the specified language (e.g., `test_` prefix for Python, camelCase for Java).
+        - Include descriptive names that reflect the purpose of the test.
+        - Combine all test functions or methods into a single class or module.
 
     2. **Test Cases**:
         - Cover typical inputs, edge cases, and invalid inputs.
