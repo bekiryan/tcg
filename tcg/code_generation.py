@@ -40,6 +40,7 @@ def generate_code(client, code, language="Python", description="", model="gpt-4o
     #### **Expected Test Code Output:**
     - Generate unit tests using the conventions of the `{language}` language.
     """
+    print(f"Generating test code for: {description}")
     return chat_completion(client, prompt, model)
 
 
