@@ -14,7 +14,7 @@ class TestCaseGenerator:
 
     def generate(self, function_description: str, code_paths: list[str], output_file_path: str) -> None:
         # Get all files from directories or file paths
-        code_files = load_code_from_files(get_all_files(code_paths))
+        code_files = load_code_from_files(get_all_files(code_paths), code_paths)
 
         response = generate_code(self.client, code_files, function_description, self.model)
         test_code = extract_code(response)

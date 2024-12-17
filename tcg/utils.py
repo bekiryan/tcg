@@ -7,7 +7,6 @@ def get_all_files(file_or_dir_paths):
     """Collects all files from given paths, whether they are files, directories, or patterns."""
     all_files = []
     for path in file_or_dir_paths:
-        # Expand wildcard patterns
         if '*' in path or '?' in path:
             all_files.extend(glob.glob(path, recursive=True))
         elif os.path.isfile(path):
@@ -18,12 +17,13 @@ def get_all_files(file_or_dir_paths):
     return all_files
 
 
-def load_code_from_files(file_paths):
+def load_code_from_files(file_paths, code_paths):
     """Loads and concatenates code content from specified code files, handling encoding errors."""
     code_content = ""
-    for file_path in file_paths:
+    for file_path, code_path in zip(file_paths, code_paths):
         try:
             with open(file_path, "r", encoding="utf-8") as file:
+                code_content += f"# {code_path}\n"
                 code_content += file.read() + "\n\n"  # Separate files with newlines
         except UnicodeDecodeError:
             print(f"Skipping non-UTF-8 file: {file_path}")
